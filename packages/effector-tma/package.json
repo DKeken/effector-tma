@@ -1,6 +1,6 @@
 {
   "name": "effector-telegram-mini-app",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Effector-based SDK for Telegram Mini Apps client application.",
   "author": "DKeken",
   "homepage": "https://github.com/DKeken/effector-tma#readme",
