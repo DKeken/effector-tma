@@ -22,5 +22,8 @@
     "typescript": "^5.0.0",
     "effector": "^23.2.3",
     "patronum": "^2.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
