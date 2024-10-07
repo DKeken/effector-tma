@@ -1,5 +1,11 @@
 # effector-telegram-mini-app
 
+## 1.0.4
+
+### Patch Changes
+
+- a72e1aa: Improvements: Covered the code with tests
+
 ## 1.0.3
 
 ### Patch Changes
