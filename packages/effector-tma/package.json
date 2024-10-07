@@ -1,7 +1,7 @@
 {
-  "name": "effector-tma",
-  "main": "./dist/effector-tma.js",
-  "types": "./dist/effector-tma.d.ts",
+  "name": "effector-telegram-mini-app",
+  "main": "./dist/effector-telegram-mini-app.js",
+  "types": "./dist/effector-telegram-mini-app.d.ts",
   "version": "1.0.0",
   "type": "module",
   "scripts": {

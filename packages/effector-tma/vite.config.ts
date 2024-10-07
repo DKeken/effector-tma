@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: "./src/index.ts",
-      name: "effector-tma",
-      fileName: "effector-tma",
+      name: "effector-telegram-mini-app",
+      fileName: "effector-telegram-mini-app",
       formats: ["es", "umd"],
     },
     rollupOptions: {

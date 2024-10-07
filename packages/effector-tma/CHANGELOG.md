@@ -1,4 +1,4 @@
-# effector-tma
+# effector-telegram-mini-app
 
 ## 1.0.0
 
