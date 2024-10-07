@@ -6,13 +6,15 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
     "test": "turbo run test",
-    "check-types": "turbo run check-types",
     "ci:packages:deps": "bun i --filter=\"./packages/*\"",
     "ci:packages:build": "bun run packages:build",
-    "ci:packages:rollup": "bun run ci:packages:deps && bun run ci:packages:build",
-    "packages:build": "turbo run build --filter=\"./packages/*\""
+    "ci:packages:test": "bun run packages:test",
+    "ci:packages:check-types": "bun run packages:check-types",
+    "ci:packages:rollup": "bun run ci:packages:deps && bun run ci:packages:build && bun run ci:packages:check-types && bun run ci:packages:test",
+    "packages:build": "turbo run build --filter=\"./packages/*\"",
+    "packages:test": "turbo run test --filter=\"./packages/*\"",
+    "packages:check-types": "turbo run typecheck --filter=\"./packages/*\""
   },
   "workspaces": [
     "packages/*",

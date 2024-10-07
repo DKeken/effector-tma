@@ -38,6 +38,7 @@
   "scripts": {
     "build": "rimraf dist && vite build",
     "test": "vitest --run",
+    "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

@@ -1,7 +1,6 @@
 import {
   createEffect,
   createEvent,
-  is,
   restore,
   sample,
   type EventCallable,
@@ -32,23 +31,18 @@ export function createTelegramEvent<T>(
   const attachTelegramEventListener = () => {
     sample({
       clock: $telegramWebApp,
-      source: $telegramEventStore,
-      filter: (_, clock) => Boolean(clock),
-      fn: (_, clock) => {
-        if (clock) {
-          const eventHandler = (payload: T) => {
-            if (payload === undefined) {
-              telegramEvent(`${eventType} - called` as unknown as T);
-            } else {
-              telegramEvent(payload);
-            }
-          };
+      filter: Boolean,
+      fn: (clock) => {
+        const eventHandler = (payload: T) => {
+          if (payload === undefined) {
+            telegramEvent(`${eventType} - called` as T);
+          } else {
+            telegramEvent(payload);
+          }
+        };
 
-          clock.WebApp.offEvent(eventType, eventHandler);
-          clock.WebApp.onEvent(eventType, eventHandler);
-        } else {
-          throw new Error("Telegram WebApp is not initialized");
-        }
+        clock.WebApp.offEvent(eventType, eventHandler);
+        clock.WebApp.onEvent(eventType, eventHandler);
       },
     });
   };
