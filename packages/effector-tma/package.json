@@ -2,6 +2,7 @@
   "name": "@effector-tma/core",
   "main": "./dist/effector-tma.js",
   "types": "./dist/effector-tma.d.ts",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "build": "vite build",
