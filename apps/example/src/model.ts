@@ -1,9 +1,6 @@
 import { createEvent, sample } from "effector";
 import { createGate } from "effector-react";
-import {
-  telegramInitializeRequested,
-  createTelegramEvent,
-} from "@effector-tma/core";
+import { telegramInitializeRequested, createTelegramEvent } from "effector-tma";
 
 export const PageStartGate = createGate("PageStartGate");
 

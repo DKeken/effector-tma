@@ -1,8 +1,4 @@
-import {
-  $initData,
-  $initDataUnsafe,
-  $telegramWebApp,
-} from "@effector-tma/core";
+import { $initData, $initDataUnsafe, $telegramWebApp } from "effector-tma";
 import { useGate, useUnit } from "effector-react";
 import { PageStartGate, $viewportChanged, $themeChanged } from "./model";
 

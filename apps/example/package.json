@@ -11,7 +11,7 @@
   "dependencies": {
     "effector": "^23.2.3",
     "effector-react": "^23.2.1",
-    "@effector-tma/core": "workspace:*",
+    "effector-tma": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

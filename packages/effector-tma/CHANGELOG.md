@@ -1,4 +1,4 @@
-# @effector-tma/core
+# effector-tma
 
 ## 1.0.0
 
