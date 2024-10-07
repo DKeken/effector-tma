@@ -22,9 +22,7 @@
   "type": "module",
   "sideEffects": false,
   "files": [
-    "dist",
-    "src",
-    "tsconfig.json"
+    "dist"
   ],
   "main": "./dist/effector-telegram-mini-app.js",
   "module": "./dist/effector-telegram-mini-app.js",
@@ -48,7 +46,6 @@
     "jsdom": "^25.0.1",
     "vite": "^5.4.8",
     "vite-plugin-dts": "^4.2.3",
-    "vite-plugin-mkcert": "^1.17.6",
     "vite-tsconfig-paths": "^5.0.1",
     "vitest": "^2.1.2",
     "rimraf": "^5.0.0",

@@ -15,46 +15,28 @@ export function createTelegramEvent<T>(
 ) {
   const telegramEvent = createEvent<T>(`telegram${eventType}Event`);
   const $telegramEventStore = restore(telegramEvent, null);
-  const callbackEffect = createEffect<T, void>();
-
-  const initializeCallbackEffect = () => {
-    if (callback) {
-      callbackEffect.use((payload: T) => {
-        if (is.event(callback)) {
-          throw new Error(
-            "Callback is an event, but it's being called from an effect. This may lead to unexpected behavior or logic issues."
-          );
-        }
-        return callback(payload);
-      });
-    }
-  };
 
   const configureEventHandling = () => {
-    if (callback) {
-      sample({
-        source: telegramEvent,
-        filter: () => !is.event(callback),
-        target: callbackEffect,
-      });
-
-      sample({
-        source: telegramEvent,
-        filter: () => is.event(callback),
-        target: callback as EventCallable<T>,
-      });
+    if (typeof callback !== "function") {
+      throw new Error("callback should be a function");
     }
+
+    const callbackFx = createEffect((data: T) => callback(data));
+
+    sample({
+      clock: telegramEvent,
+      target: callbackFx,
+    });
   };
 
   const attachTelegramEventListener = () => {
     sample({
       clock: $telegramWebApp,
       source: $telegramEventStore,
-      filter: (source, clock) => Boolean(clock),
-      fn: (source, clock) => {
+      filter: (_, clock) => Boolean(clock),
+      fn: (_, clock) => {
         if (clock) {
           const eventHandler = (payload: T) => {
-            console.log("eventHandler", payload);
             if (payload === undefined) {
               telegramEvent(`${eventType} - called` as unknown as T);
             } else {
@@ -71,8 +53,10 @@ export function createTelegramEvent<T>(
     });
   };
 
-  initializeCallbackEffect();
-  configureEventHandling();
+  if (callback) {
+    configureEventHandling();
+  }
+
   attachTelegramEventListener();
 
   return {

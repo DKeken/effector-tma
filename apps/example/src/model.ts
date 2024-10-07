@@ -3,6 +3,7 @@ import { createGate } from "effector-react";
 import {
   telegramInitializeRequested,
   createTelegramEvent,
+  $initData,
 } from "effector-telegram-mini-app";
 
 export const PageStartGate = createGate("PageStartGate");
@@ -18,11 +19,11 @@ export const { event: onViewportChanged, store: $viewportChanged } =
   createTelegramEvent("viewportChanged", viewportChanged);
 
 export const { event: onThemeChanged, store: $themeChanged } =
-  createTelegramEvent("themeChanged");
+  createTelegramEvent("themeChanged", () => console.log("themeChanged"));
 
 sample({
-  clock: onThemeChanged,
+  clock: viewportChanged,
   fn: (payload) => {
-    console.log("onThemeChanged", payload);
+    console.log("onViewportChanged", payload);
   },
 });

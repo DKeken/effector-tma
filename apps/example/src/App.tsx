@@ -25,7 +25,13 @@ function App() {
 
   console.log(viewportChanged, themeChanged);
 
-  return <div>{initDataUnsafe?.user.username}</div>;
+  return (
+    <div>
+      {initDataUnsafe &&
+        "user" in initDataUnsafe &&
+        initDataUnsafe?.user.username}
+    </div>
+  );
 }
 
 export default App;
