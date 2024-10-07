@@ -1,6 +1,6 @@
 {
   "name": "effector-telegram-mini-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Effector-based SDK for Telegram Mini Apps client application.",
   "author": "Your Name <your.email@example.com>",
   "homepage": "https://github.com/your-repo/effector-telegram-mini-app#readme",
