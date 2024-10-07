@@ -1,0 +1,24 @@
+{
+  "name": "monorepo",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "check-types": "turbo run check-types"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "turbo": "latest"
+  },
+  "packageManager": "bun@1.1.28",
+  "dependencies": {
+    "@changesets/cli": "^2.27.9"
+  }
+}

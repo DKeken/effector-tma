@@ -1,0 +1,25 @@
+{
+  "name": "@effector-tma/core",
+  "main": "./dist/effector-tma.js",
+  "types": "./dist/effector-tma.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "ajv": "^8.17.1",
+    "jsdom": "^25.0.1",
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.3",
+    "vite-plugin-mkcert": "^1.17.6",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.1.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0",
+    "effector": "^23.2.3",
+    "patronum": "^2.2.0"
+  }
+}
