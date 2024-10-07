@@ -27,6 +27,13 @@ jobs:
       - name: Rollup
         run: bun run ci:packages:rollup
 
+      - name: Authenticate npm
+        run: |
+          echo "auto-install-peers=true" >> ~/.npmrc
+          echo "always-auth=true" >> ~/.npmrc
+          echo "registry=https://registry.npmjs.org" >> ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+
       - name: Run changeset
         uses: changesets/action@v1
         with:
