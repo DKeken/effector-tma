@@ -1,5 +1,11 @@
 # effector-telegram-mini-app
 
+## 1.0.3
+
+### Patch Changes
+
+- f6d7f17: Made the Event factory logic cleaner, fixed the dependencies
+
 ## 1.0.2
 
 ### Patch Changes
