@@ -26,15 +26,15 @@
     "src",
     "tsconfig.json"
   ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/dts/index.d.ts",
+  "main": "./dist/effector-telegram-mini-app.js",
+  "module": "./dist/effector-telegram-mini-app.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/dts/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.cjs"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/effector-telegram-mini-app.js",
+      "require": "./dist/effector-telegram-mini-app.cjs",
+      "default": "./dist/effector-telegram-mini-app.js"
     }
   },
   "scripts": {
