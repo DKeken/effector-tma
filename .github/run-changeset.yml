@@ -16,26 +16,21 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup node
-        uses: actions/setup-node@v3
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 20
-          registry-url: "https://registry.npmjs.org"
+          bun-version: 1.1.28
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        id: pnpm-install
-        with:
-          version: 9
-          run_install: false
+      - name: Install dependencies
+        run: bun install
 
       - name: Rollup
-        run: pnpm run ci:packages:rollup
+        run: bun run ci:packages:rollup
 
       - name: Run changeset
         uses: changesets/action@v1
         with:
-          publish: pnpm changeset publish
+          publish: bun changeset publish
           commit: "chore(packages): version packages"
           title: "chore(packages): version packages"
         env:
