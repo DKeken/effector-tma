@@ -37,7 +37,7 @@ jobs:
       - name: Run changeset
         uses: changesets/action@v1
         with:
-          publish: bun changeset publish --dir ./dist
+          publish: bun changeset publish --contents ./dist
           commit: "chore(packages): version packages"
           title: "chore(packages): version packages"
         env:

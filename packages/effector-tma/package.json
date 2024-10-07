@@ -1,12 +1,45 @@
 {
   "name": "effector-telegram-mini-app",
-  "main": "./dist/effector-telegram-mini-app.js",
-  "types": "./dist/effector-telegram-mini-app.d.ts",
   "version": "1.0.0",
+  "description": "Effector-based SDK for Telegram Mini Apps client application.",
+  "author": "Your Name <your.email@example.com>",
+  "homepage": "https://github.com/your-repo/effector-telegram-mini-app#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:your-repo/effector-telegram-mini-app.git",
+    "directory": "packages/effector-tma"
+  },
+  "bugs": {
+    "url": "https://github.com/your-repo/effector-telegram-mini-app/issues"
+  },
+  "keywords": [
+    "telegram-mini-apps",
+    "effector",
+    "sdk"
+  ],
+  "license": "MIT",
   "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/dts/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/dts/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
+    }
+  },
   "scripts": {
-    "build": "vite build",
-    "test": "vitest"
+    "build": "rimraf dist && vite build",
+    "test": "vitest --run",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -16,10 +49,11 @@
     "vite-plugin-dts": "^4.2.3",
     "vite-plugin-mkcert": "^1.17.6",
     "vite-tsconfig-paths": "^5.0.1",
-    "vitest": "^2.1.2"
+    "vitest": "^2.1.2",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0",
     "effector": "^23.2.3",
     "patronum": "^2.2.0"
   },
