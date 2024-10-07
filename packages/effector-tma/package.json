@@ -2,20 +2,21 @@
   "name": "effector-telegram-mini-app",
   "version": "1.0.1",
   "description": "Effector-based SDK for Telegram Mini Apps client application.",
-  "author": "Your Name <your.email@example.com>",
-  "homepage": "https://github.com/your-repo/effector-telegram-mini-app#readme",
+  "author": "DKeken",
+  "homepage": "https://github.com/DKeken/effector-tma#readme",
   "repository": {
     "type": "git",
-    "url": "git@github.com:your-repo/effector-telegram-mini-app.git",
+    "url": "git@github.com:DKeken/effector-tma.git",
     "directory": "packages/effector-tma"
   },
   "bugs": {
-    "url": "https://github.com/your-repo/effector-telegram-mini-app/issues"
+    "url": "https://github.com/DKeken/effector-tma/issues"
   },
   "keywords": [
     "telegram-mini-apps",
     "effector",
-    "sdk"
+    "sdk",
+    "tma"
   ],
   "license": "MIT",
   "type": "module",
