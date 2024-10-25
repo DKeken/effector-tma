@@ -1,5 +1,5 @@
 import { $telegramWebApp } from "./telegram-instance";
-import { reshape } from "patronum/reshape";
+import { reshape } from "patronum";
 
 export const { $initDataUnsafe, $initData } = reshape({
   source: $telegramWebApp,

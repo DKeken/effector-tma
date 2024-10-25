@@ -1,7 +1,7 @@
 import { createEffect, createEvent, restore, sample } from "effector";
 import { isBrowser } from "./utils/is-browser";
 import type { TelegramWebAppRoot } from "./utils/types";
-import { status } from "patronum/status";
+import { status } from "patronum";
 
 export const initTelegramFx = createEffect<void, TelegramWebAppRoot | null>();
 export const telegramInitializeRequested = createEvent<void>();
