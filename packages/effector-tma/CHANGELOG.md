@@ -1,5 +1,11 @@
 # effector-telegram-mini-app
 
+## 1.1.0
+
+### Minor Changes
+
+- 80288ca: Improvements: add haptic-feedback and cloud-storage bindings
+
 ## 1.0.4
 
 ### Patch Changes
