@@ -7,11 +7,13 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "test": "turbo run test",
+    "ci:example:build": "bun run packages:build && bun run example:build",
     "ci:packages:deps": "bun i --filter=\"./packages/*\"",
     "ci:packages:build": "bun run packages:build",
     "ci:packages:test": "bun run packages:test",
     "ci:packages:check-types": "bun run packages:check-types",
     "ci:packages:rollup": "bun run ci:packages:deps && bun run ci:packages:build && bun run ci:packages:check-types && bun run ci:packages:test",
+    "example:build": "turbo run build --filter=\"./apps/*\"",
     "packages:build": "turbo run build --filter=\"./packages/*\"",
     "packages:test": "turbo run test --filter=\"./packages/*\"",
     "packages:check-types": "turbo run typecheck --filter=\"./packages/*\""
