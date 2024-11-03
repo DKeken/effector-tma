@@ -1,35 +1,22 @@
-import {
-  $initData,
-  $initDataUnsafe,
-  $telegramWebApp,
-} from "effector-telegram-mini-app";
 import { useGate, useUnit } from "effector-react";
 import { PageStartGate, $viewportChanged, $themeChanged } from "./model";
+import { InputForm } from "./components/InputForm";
+import { UserInfo } from "./components/UserInfo";
+import { HapticFeedback } from "./components/HapticFeedback";
 
 function App() {
   useGate(PageStartGate);
 
-  const {
-    telegramWebApp,
-    initData,
-    initDataUnsafe,
-    viewportChanged,
-    themeChanged,
-  } = useUnit({
-    telegramWebApp: $telegramWebApp,
-    initData: $initData,
-    initDataUnsafe: $initDataUnsafe,
+  const { viewportChanged, themeChanged } = useUnit({
     viewportChanged: $viewportChanged,
     themeChanged: $themeChanged,
   });
 
-  console.log(viewportChanged, themeChanged);
-
   return (
     <div>
-      {initDataUnsafe &&
-        "user" in initDataUnsafe &&
-        initDataUnsafe?.user.username}
+      <HapticFeedback />
+      <InputForm />
+      <UserInfo />
     </div>
   );
 }

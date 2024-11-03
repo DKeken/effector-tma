@@ -6,3 +6,4 @@ export {
 
 export { $initData, $initDataUnsafe } from "./get-init-data";
 export { createTelegramEvent } from "./on-event";
+export * from "./bridge";
