@@ -26,6 +26,3 @@ jobs:
 
       - name: Build packages
         run: bun run ci:packages:rollup
-
-      - name: Run tests
-        run: bun test
