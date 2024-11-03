@@ -448,7 +448,7 @@ interface SettingsButton {
 /**
  * Interface for controlling haptic feedback.
  */
-interface HapticFeedback {
+export interface HapticFeedback {
   /** Triggers an impact haptic feedback with the specified style. */
   impactOccurred: (style: HapticImpactStyle) => void;
 
@@ -462,13 +462,13 @@ interface HapticFeedback {
 /**
  * Types for haptic feedback styles.
  */
-type HapticImpactStyle = "light" | "medium" | "heavy" | "rigid" | "soft";
-type HapticNotificationType = "error" | "success" | "warning";
+export type HapticImpactStyle = "light" | "medium" | "heavy" | "rigid" | "soft";
+export type HapticNotificationType = "error" | "success" | "warning";
 
 /**
  * Interface for controlling cloud storage operations.
  */
-interface CloudStorage {
+export interface CloudStorage {
   /** Stores a value with the specified key in cloud storage. */
   setItem: (
     key: string,
